@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { createClient } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Mail, Lock, User, ArrowRight, Loader2, CheckCircle2 } from 'lucide-react'
+import { Mail, Lock, User, ArrowRight, Loader2, CheckCircle2, Eye, EyeOff } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 import { BackgroundShapes } from '@/components/BackgroundShapes'
 
@@ -14,6 +14,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const router = useRouter()
@@ -92,7 +93,7 @@ export default function SignUpPage() {
             <h1 className="text-3xl font-bold tracking-tight mb-2">
               Create <span className="text-[#00f2ff]">Account</span>
             </h1>
-            <p className="text-white/60">Join the next generation of AI</p>
+            <p className="text-white/60">Join VicVerse today</p>
           </div>
 
           <form onSubmit={handleSignUp} className="space-y-4">
@@ -132,13 +133,20 @@ export default function SignUpPage() {
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                   <input
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="input-field pl-10 text-xs"
+                    className="input-field pl-10 pr-10 text-xs"
                     placeholder="••••••••"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-white/40 hover:text-white cursor-pointer"
+                  >
+                    {showPassword ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
+                  </button>
                 </div>
               </div>
               <div className="space-y-2">
@@ -146,7 +154,7 @@ export default function SignUpPage() {
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                   <input
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     required
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}

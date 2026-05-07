@@ -5,13 +5,14 @@ import { motion } from 'framer-motion'
 import { createClient } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Mail, Lock, ArrowRight, Loader2, Globe } from 'lucide-react'
+import { Mail, Lock, ArrowRight, Loader2, Globe, Eye, EyeOff } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 import { BackgroundShapes } from '@/components/BackgroundShapes'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
   const supabase = createClient()
@@ -62,7 +63,7 @@ export default function LoginPage() {
             <h1 className="text-3xl font-bold tracking-tight mb-2">
               Welcome <span className="text-[#00f2ff]">Back</span>
             </h1>
-            <p className="text-white/60">Log in to your Antigravity AI account</p>
+            <p className="text-white/60">Log in to your VicVerse account</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
@@ -91,13 +92,21 @@ export default function LoginPage() {
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="input-field pl-10"
+                  className="input-field pl-10 pr-10"
                   placeholder="••••••••"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors cursor-pointer"
+                  title={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
               </div>
             </div>
 

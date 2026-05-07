@@ -73,9 +73,9 @@ export default function DashboardLayout({
             <div className="p-6 flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-[#00f2ff] rounded-lg flex items-center justify-center">
-                  <span className="text-black font-bold">A</span>
+                  <span className="text-black font-bold">V</span>
                 </div>
-                <span className="font-bold text-xl tracking-tight">Antigravity</span>
+                <span className="font-bold text-xl tracking-tight">VicVerse</span>
               </div>
               <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-white/40 hover:text-white cursor-pointer">
                 <X className="w-5 h-5" />
