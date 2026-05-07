@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Mail, ArrowLeft, CheckCircle2 } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { BackgroundShapes } from '@/components/BackgroundShapes'
 
 export default function VerifyEmailPage() {
@@ -28,7 +28,7 @@ export default function VerifyEmailPage() {
           </p>
 
           <div className="space-y-4">
-            <button className="btn-primary w-full">
+            <button className="btn-primary w-full cursor-pointer">
               Resend Verification Email
             </button>
             <Link 

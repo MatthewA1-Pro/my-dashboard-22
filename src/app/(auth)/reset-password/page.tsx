@@ -88,7 +88,7 @@ export default function ResetPasswordPage() {
             <button
               disabled={loading}
               type="submit"
-              className="btn-primary w-full flex items-center justify-center space-x-2"
+              className="btn-primary w-full flex items-center justify-center space-x-2 cursor-pointer"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : (
                 <>

@@ -1,49 +1,71 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-  --accent: #00f2ff;
-  --accent-glow: rgba(0, 242, 255, 0.4);
-}
-
-::selection {
-  background: rgba(0, 242, 255, 0.3);
-  color: #fff;
+@theme {
+  --color-accent: #00f2ff;
+  --color-accent-glow: rgba(0, 242, 255, 0.4);
 }
 
 @layer base {
   body {
-    @apply bg-[#050505] text-white overflow-x-hidden;
+    background-color: #050505;
+    color: white;
+    overflow-x: hidden;
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
   
   .glass-hover {
-    @apply hover:bg-white/10 transition-all duration-300;
+    transition: all 0.3s;
+  }
+  .glass-hover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .neon-border {
-    @apply border border-white/20 hover:border-[#00f2ff]/50 transition-colors duration-300;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.3s;
+  }
+  .neon-border:hover {
+    border-color: rgba(0, 242, 255, 0.5);
   }
 
   .neon-glow {
-    box-shadow: 0 0 15px var(--accent-glow);
+    box-shadow: 0 0 15px var(--color-accent-glow);
   }
 
   .btn-primary {
-    @apply bg-[#00f2ff] text-black font-semibold py-2 px-4 rounded-lg hover:bg-[#00d8e6] transition-all duration-300 shadow-[0_0_15px_rgba(0,242,255,0.4)];
+    background-color: #00f2ff;
+    color: black;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+  }
+  .btn-primary:hover {
+    background-color: #00d8e6;
   }
 
   .input-field {
-    @apply w-full bg-white/5 border border-white/10 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#00f2ff]/50 focus:border-[#00f2ff]/50 transition-all duration-300;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    transition: all 0.3s;
+  }
+  .input-field:focus {
+    outline: none;
+    border-color: rgba(0, 242, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 242, 255, 0.25);
   }
 }
 
@@ -74,4 +96,9 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+::selection {
+  background: rgba(0, 242, 255, 0.3);
+  color: #fff;
 }

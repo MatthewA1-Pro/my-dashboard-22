@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { createClient } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Github, Mail, Lock, Chrome, Facebook, ArrowRight, Loader2 } from 'lucide-react'
+import { Mail, Lock, ArrowRight, Loader2, Globe, Github, Facebook } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 import { BackgroundShapes } from '@/components/BackgroundShapes'
 
@@ -109,7 +109,7 @@ export default function LoginPage() {
             <button
               disabled={loading}
               type="submit"
-              className="btn-primary w-full flex items-center justify-center space-x-2"
+              className="btn-primary w-full flex items-center justify-center space-x-2 cursor-pointer"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : (
                 <>
@@ -130,13 +130,13 @@ export default function LoginPage() {
           </div>
 
           <div className="grid grid-cols-3 gap-3">
-            <button onClick={() => handleSocialLogin('google')} title="Google Login" className="glass py-2 flex justify-center rounded-lg glass-hover">
-              <Chrome className="w-5 h-5 text-white/80" />
+            <button onClick={() => handleSocialLogin('google')} title="Google Login" className="glass py-2 flex justify-center rounded-lg glass-hover cursor-pointer">
+              <Globe className="w-5 h-5 text-white/80" />
             </button>
-            <button onClick={() => handleSocialLogin('github')} title="GitHub Login" className="glass py-2 flex justify-center rounded-lg glass-hover">
+            <button onClick={() => handleSocialLogin('github')} title="GitHub Login" className="glass py-2 flex justify-center rounded-lg glass-hover cursor-pointer">
               <Github className="w-5 h-5 text-white/80" />
             </button>
-            <button onClick={() => handleSocialLogin('facebook')} title="Facebook Login" className="glass py-2 flex justify-center rounded-lg glass-hover">
+            <button onClick={() => handleSocialLogin('facebook')} title="Facebook Login" className="glass py-2 flex justify-center rounded-lg glass-hover cursor-pointer">
               <Facebook className="w-5 h-5 text-white/80" />
             </button>
           </div>

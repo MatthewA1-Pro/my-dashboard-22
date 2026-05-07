@@ -7,7 +7,6 @@ import {
   ArrowDownRight, 
   DollarSign, 
   Activity, 
-  Eye,
   TrendingUp,
   CreditCard
 } from 'lucide-react'
@@ -75,10 +74,10 @@ export default function DashboardPage() {
           <p className="text-white/40 mt-1">Real-time metrics for your AI deployments</p>
         </div>
         <div className="flex items-center space-x-3">
-          <button title="Export" className="glass px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition-colors">
+          <button title="Export" className="glass px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition-colors cursor-pointer">
             Export Data
           </button>
-          <button className="btn-primary px-4 py-2 text-sm">
+          <button className="btn-primary px-4 py-2 text-sm cursor-pointer">
             Create Report
           </button>
         </div>
@@ -101,7 +100,7 @@ export default function DashboardPage() {
         >
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-lg font-bold">Revenue Growth</h2>
-            <select title="Time Range" className="bg-white/5 border border-white/5 rounded-lg px-3 py-1 text-sm focus:outline-none">
+            <select title="Time Range" className="bg-white/5 border border-white/5 rounded-lg px-3 py-1 text-sm focus:outline-none cursor-pointer">
               <option>Last 7 days</option>
               <option>Last 30 days</option>
               <option>Last 90 days</option>
@@ -229,7 +228,7 @@ export default function DashboardPage() {
       >
         <div className="p-6 border-b border-white/5 flex items-center justify-between">
           <h2 className="text-lg font-bold">Recent Transactions</h2>
-          <button className="text-sm text-[#00f2ff] hover:underline">View all</button>
+          <button className="text-sm text-[#00f2ff] hover:underline cursor-pointer">View all</button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -247,7 +246,7 @@ export default function DashboardPage() {
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
-                        <User className="w-4 h-4 text-white/40" />
+                        <UserIcon className="w-4 h-4 text-white/40" />
                       </div>
                       <div>
                         <p className="text-sm font-medium">User #{i}234</p>
@@ -276,7 +275,7 @@ export default function DashboardPage() {
   )
 }
 
-function User({ className }: { className?: string }) {
+function UserIcon({ className }: { className?: string }) {
   return (
     <svg 
       xmlns="http://www.w3.org/2000/svg" 

@@ -77,7 +77,7 @@ export default function DashboardLayout({
                 </div>
                 <span className="font-bold text-xl tracking-tight">Antigravity</span>
               </div>
-              <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-white/40 hover:text-white">
+              <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-white/40 hover:text-white cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -102,7 +102,7 @@ export default function DashboardLayout({
             <div className="p-4 border-t border-white/5">
               <button
                 onClick={signOut}
-                className="flex items-center space-x-3 px-4 py-3 w-full text-white/40 hover:text-red-400 hover:bg-red-400/5 rounded-xl transition-all duration-200"
+                className="flex items-center space-x-3 px-4 py-3 w-full text-white/40 hover:text-red-400 hover:bg-red-400/5 rounded-xl transition-all duration-200 cursor-pointer"
               >
                 <LogOut className="w-5 h-5" />
                 <span className="font-medium">Logout</span>
@@ -118,7 +118,7 @@ export default function DashboardLayout({
         <header className="h-16 border-b border-white/5 flex items-center justify-between px-4 lg:px-8 bg-[#050505]/80 backdrop-blur-md z-40">
           <div className="flex items-center">
             {!isSidebarOpen && (
-              <button onClick={() => setIsSidebarOpen(true)} className="mr-4 text-white/40 hover:text-white transition-colors">
+              <button onClick={() => setIsSidebarOpen(true)} className="mr-4 text-white/40 hover:text-white transition-colors cursor-pointer">
                 <Menu className="w-6 h-6" />
               </button>
             )}
@@ -133,7 +133,7 @@ export default function DashboardLayout({
           </div>
 
           <div className="flex items-center space-x-4">
-            <button className="relative p-2 text-white/40 hover:text-white transition-colors">
+            <button className="relative p-2 text-white/40 hover:text-white transition-colors cursor-pointer" title="Notifications">
               <Bell className="w-5 h-5" />
               <span className="absolute top-2 right-2 w-2 h-2 bg-[#00f2ff] rounded-full border-2 border-[#050505]" />
             </button>
